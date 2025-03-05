@@ -128,17 +128,26 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 md:py-32 relative overflow-hidden bg-white">
+        <section className="py-10 md:py-16 relative overflow-hidden bg-white">
           <div className="absolute inset-0 bg-gradient-to-br from-nativeCyan/5 to-nativeGreen/5 -z-10"></div>
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black">
-                AI-Native Apps & Conversational Solutions
+              <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-6 md:hidden">
+                <Image
+                  src="/placeholder.svg?height=800&width=800"
+                  alt="AI Innovation"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black text-center md:text-left">
+              Become an AI-First Company
               </h1>
-              <p className="text-lg md:text-xl text-black/80">
-                Transforming businesses through Custom AI, Voice Agents, Chatbots, Consulting, and Team Trainings.
+              <p className="text-lg md:text-xl text-black/80 text-center md:text-left">
+              Launch AI-native apps and engaging conversational experiences that solve real-world customer problems and amplify your team's productivity.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button size="lg" asChild>
                   <a href="#contact">Work With Us</a>
                 </Button>
@@ -152,7 +161,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden">
+            <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden hidden md:block">
               <Image
                 src="/placeholder.svg?height=800&width=800"
                 alt="AI Innovation"
@@ -170,36 +179,38 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-white">
+        <section id="about" className="py-20 bg-nativeCream/20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6 text-black">About Our Agency</h2>
+              <div className="inline-block mb-6">
+                <h2 className="text-3xl font-bold text-black">Our Mission</h2>
+                <div className="h-1 bg-nativeOrange w-24 mx-auto mt-2 rounded-full"></div>
+              </div>
               <p className="text-lg text-black/80">
-                Founded by AI specialists with a passion for innovation, our agency bridges the gap between cutting-edge
-                AI technology and practical business applications. We recognized that while AI offers tremendous
-                potential, many organizations struggle with implementation. Our mission is to demystify AI and create
-                tailored solutions that drive real business value, enhance customer experiences, and optimize
-                operations.
+              Native AI seeks to revolutionize human-computer interaction by crafting intuitive, powerful, and delightful AI-native experiences. We empower businesses to seamlessly integrate cutting-edge AI solutions—reshaping how brands connect, automate, and innovate.
               </p>
             </div>
           </div>
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-20 bg-white">
+        <section id="services" className="py-20 bg-nativeCyan/5">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center text-black">Our Services</h2>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-black">Our Services</h2>
+              <div className="h-1 bg-nativeOrange w-24 mx-auto mt-2 rounded-full"></div>
+            </div>
             <div className="grid md:grid-cols-2 gap-8">
               {services.map((service) => (
                 <div
                   key={service.id}
-                  className="bg-nativeCream rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-nativeCream"
                 >
-                  <div className="h-12 w-12 bg-white rounded-lg flex items-center justify-center mb-4">
+                  <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-black">{service.title}</h3>
-                  <p className="text-black/80 mb-4">{service.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-black text-center md:text-left">{service.title}</h3>
+                  <p className="text-black/80 mb-4 text-center md:text-left">{service.description}</p>
 
                   {/* Bullet Points */}
                   <ul className="mb-6 space-y-2">
@@ -227,11 +238,14 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 bg-white">
+        <section id="contact" className="py-20 bg-nativeCream/20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center text-black">Work With Us</h2>
-              <div className="bg-nativeCream rounded-lg p-8 shadow-sm">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-black">Work With Us</h2>
+                <div className="h-1 bg-nativeOrange w-24 mx-auto mt-2 rounded-full"></div>
+              </div>
+              <div className="bg-white rounded-lg p-8 shadow-sm">
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
