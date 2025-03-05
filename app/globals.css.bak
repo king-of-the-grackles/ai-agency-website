@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* #FFFFFF - Background */
+    --foreground: 0 0% 0%; /* #000000 - Body and Header Text */
+    --card: 48 80% 94%; /* #FAF5E0 - Card Background */
+    --card-foreground: 0 0% 0%; /* #000000 - Body and Header Text */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 14 97% 53%; /* #FC5713 - CTA Buttons */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 176 96% 76%; /* #8BFCF9 - Hyperlinks */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 48 80% 94%; /* #FAF5E0 - Card Background (lighter) */
+    --muted-foreground: 0 0% 40%;
+    --accent: 146 94% 68%; /* #61FA85 - Bullet Point Color */
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 48 80% 94%; /* #FAF5E0 - Card Background */
+    --input: 48 80% 94%; /* #FAF5E0 - Card Background */
+    --ring: 14 97% 53%; /* #FC5713 - CTA Buttons */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 48 30% 20%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 14 97% 53%; /* #FC5713 - CTA Buttons */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 176 96% 76%; /* #8BFCF9 - Hyperlinks */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 48 30% 20%;
+    --muted-foreground: 48 20% 70%;
+    --accent: 146 94% 68%; /* #61FA85 - Bullet Point Color */
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 48 30% 20%;
+    --input: 48 30% 20%;
+    --ring: 14 97% 53%; /* #FC5713 - CTA Buttons */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  a {
+    @apply text-nativeCyan hover:text-nativeCyan/80;
+  }
+}
+
