@@ -129,8 +129,8 @@ export default function Home() {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="py-10 md:py-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white to-nativeCyan/10"></div>
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white to-nativeCyan/20"></div>
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-6 md:hidden">
@@ -183,8 +183,9 @@ export default function Home() {
         <div className="section-divider"></div>
 
         {/* Why Choose Us Section */}
-        <section className="py-20 bg-white relative">
-          <div className="absolute inset-0 bg-pattern-dots opacity-5"></div>
+        <section className="py-20 relative">
+          <div className="absolute inset-0 bg-nativeGreen/5"></div>
+          <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
           <div className="container mx-auto px-4">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-black inline-block">
@@ -244,8 +245,8 @@ export default function Home() {
 
         {/* Services Section */}
         <section id="services" className="py-20 relative">
-          <div className="absolute inset-0 bg-nativeCyan/10"></div>
-          <div className="absolute inset-0 bg-pattern-dots opacity-5"></div>
+          <div className="absolute inset-0 bg-nativeCyan/15"></div>
+          <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
           <div className="container relative mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-black inline-block">
@@ -295,8 +296,8 @@ export default function Home() {
 
         {/* About Section */}
         <section id="about" className="py-20 relative">
-          <div className="absolute inset-0 bg-nativeCream/20"></div>
-          <div className="absolute inset-0 bg-wave-pattern opacity-10"></div>
+          <div className="absolute inset-0 bg-nativeCream/30"></div>
+          <div className="absolute inset-0 bg-wave-pattern opacity-20"></div>
           <div className="container relative mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-black inline-block mb-6">
