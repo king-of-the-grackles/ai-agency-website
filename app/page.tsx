@@ -128,12 +128,11 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-10 md:py-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-white to-nativeCyan/20"></div>
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <section className="py-10 md:py-16 relative overflow-hidden section-hero">
+          <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
           <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-6 md:hidden">
+              <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-6 md:hidden shadow-xl">
                 <Image
                   src="/placeholder.svg?height=800&width=800"
                   alt="AI Innovation"
@@ -143,13 +142,13 @@ export default function Home() {
                 />
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black text-center md:text-left">
-                Become an AI-First Company
+                Become an <span className="text-gradient">AI-First</span> Company
               </h1>
               <p className="text-lg md:text-xl text-black/80 text-center md:text-left">
                 Launch AI-native apps and engaging conversational experiences that solve real-world customer problems and amplify your team's productivity.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Button size="lg" asChild>
+                <Button size="lg" asChild className="shadow-lg">
                   <a href="mailto:contact@thinknative.ai">Work With Us</a>
                 </Button>
                 <Button
@@ -162,7 +161,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden hidden md:block">
+            <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden hidden md:block shadow-xl">
               <Image
                 src="/placeholder.svg?height=800&width=800"
                 alt="AI Innovation"
@@ -183,14 +182,12 @@ export default function Home() {
         <div className="section-divider"></div>
 
         {/* Why Choose Us Section */}
-        <section className="py-20 relative">
-          <div className="absolute inset-0 bg-nativeGreen/5"></div>
-          <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
+        <section className="py-20 relative section-why-us">
+          <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
           <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-black inline-block">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-black section-title mb-6">
                 Why Choose Native AI
-                <div className="h-1 bg-nativeOrange w-full mt-2 rounded-full"></div>
               </h2>
               <p className="mt-4 text-lg text-black/80 max-w-2xl mx-auto">
                 We help businesses leverage AI technology to solve real problems and create meaningful value.
@@ -205,7 +202,7 @@ export default function Home() {
             
             <div className="grid md:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-nativeCream">
+              <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-nativeCream hover:border-nativeOrange/30 transform hover:-translate-y-1">
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <Zap className="h-6 w-6 text-nativeOrange" />
                 </div>
@@ -216,7 +213,7 @@ export default function Home() {
               </div>
               
               {/* Card 2 */}
-              <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-nativeCream">
+              <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-nativeCream hover:border-nativeOrange/30 transform hover:-translate-y-1">
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <Brain className="h-6 w-6 text-nativeOrange" />
                 </div>
@@ -227,7 +224,7 @@ export default function Home() {
               </div>
               
               {/* Card 3 */}
-              <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-nativeCream">
+              <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-nativeCream hover:border-nativeOrange/30 transform hover:-translate-y-1">
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <Users className="h-6 w-6 text-nativeOrange" />
                 </div>
@@ -244,21 +241,19 @@ export default function Home() {
         <div className="section-divider-reverse"></div>
 
         {/* Services Section */}
-        <section id="services" className="py-20 relative">
-          <div className="absolute inset-0 bg-nativeCyan/15"></div>
-          <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
+        <section id="services" className="py-20 relative section-services">
+          <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
           <div className="container relative mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-black inline-block">
+              <h2 className="text-3xl font-bold text-black section-title mb-6">
                 Our Services
-                <div className="h-1 bg-nativeOrange w-full mt-2 rounded-full"></div>
               </h2>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               {services.map((service) => (
                 <div
                   key={service.id}
-                  className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-nativeCream"
+                  className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-nativeCream hover:border-nativeCyan/30 transform hover:-translate-y-1"
                 >
                   <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                     {service.icon}
@@ -279,7 +274,7 @@ export default function Home() {
                   <Button
                     variant="default"
                     onClick={() => handleServiceClick(service)}
-                    className="w-full py-6 text-base font-medium"
+                    className="w-full py-6 text-base font-medium shadow-md hover:shadow-lg"
                     size="lg"
                   >
                     <Calendar className="h-5 w-5 mr-2" />
@@ -295,16 +290,14 @@ export default function Home() {
         <div className="section-divider"></div>
 
         {/* About Section */}
-        <section id="about" className="py-20 relative">
-          <div className="absolute inset-0 bg-nativeCream/30"></div>
-          <div className="absolute inset-0 bg-wave-pattern opacity-20"></div>
+        <section id="about" className="py-20 relative section-about">
+          <div className="absolute inset-0 bg-wave-pattern opacity-25"></div>
           <div className="container relative mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-black inline-block mb-6">
+            <div className="max-w-3xl mx-auto text-center bg-white/70 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+              <h2 className="text-3xl font-bold text-black section-title mb-6">
                 Our Mission
-                <div className="h-1 bg-nativeOrange w-full mt-2 rounded-full"></div>
               </h2>
-              <p className="text-lg text-black/80">
+              <p className="text-lg text-black/80 mt-6">
               Native AI seeks to revolutionize human-computer interaction by crafting intuitive, powerful, and delightful AI-native experiences. We empower businesses to seamlessly integrate cutting-edge AI solutions—reshaping how brands connect, automate, and innovate.
               </p>
             </div>
