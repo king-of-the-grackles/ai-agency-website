@@ -103,15 +103,23 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Sticky Navigation */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-nativeCream">
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="font-bold text-xl text-black">Native AI</div>
+          <div className="font-bold text-xl text-black flex items-center">
+            <span className="w-10 h-10 flex items-center justify-center bg-nativeCream rounded-lg mr-3 shadow-sm">
+              <span className="text-xl">🌱</span>
+            </span>
+            Native AI
+          </div>
           <nav className="hidden md:flex space-x-6">
             <a href="#about" className="text-sm font-medium text-black hover:text-nativeCyan">
               About
             </a>
             <a href="#services" className="text-sm font-medium text-black hover:text-nativeCyan">
               Services
+            </a>
+            <a href="#process" className="text-sm font-medium text-black hover:text-nativeCyan">
+              Process
             </a>
             <a href="#contact" className="text-sm font-medium text-black hover:text-nativeCyan">
               Contact
@@ -124,6 +132,7 @@ export default function Home() {
             <ChevronDown className="h-5 w-5" />
           </Button>
         </div>
+        <div className="h-[1px] bg-black"></div>
       </header>
 
       <main className="flex-grow">
@@ -195,14 +204,14 @@ export default function Home() {
             </div>
             
             <div className="text-center mb-12">
-              <Button size="lg" asChild className="px-8 shadow-lg hover:shadow-xl transition-shadow">
+              <Button size="lg" asChild className="px-8 shadow-lg">
                 <a href="#services">Discover Our Approach</a>
               </Button>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
               {/* Card 1 */}
-              <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-nativeCream hover:border-nativeOrange/30 transform hover:-translate-y-1">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <Zap className="h-6 w-6 text-nativeOrange" />
                 </div>
@@ -213,7 +222,7 @@ export default function Home() {
               </div>
               
               {/* Card 2 */}
-              <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-nativeCream hover:border-nativeOrange/30 transform hover:-translate-y-1">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <Brain className="h-6 w-6 text-nativeOrange" />
                 </div>
@@ -224,7 +233,7 @@ export default function Home() {
               </div>
               
               {/* Card 3 */}
-              <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-nativeCream hover:border-nativeOrange/30 transform hover:-translate-y-1">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <Users className="h-6 w-6 text-nativeOrange" />
                 </div>
@@ -253,7 +262,7 @@ export default function Home() {
               {services.map((service) => (
                 <div
                   key={service.id}
-                  className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-nativeCream hover:border-nativeCyan/30 transform hover:-translate-y-1"
+                  className="bg-white rounded-lg p-6 shadow-md border border-nativeCream flex flex-col h-full"
                 >
                   <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                     {service.icon}
@@ -262,7 +271,7 @@ export default function Home() {
                   <p className="text-black/80 mb-5 text-center md:text-left">{service.description}</p>
 
                   {/* Bullet Points */}
-                  <ul className="mb-6 space-y-3">
+                  <ul className="space-y-3 flex-grow">
                     {service.bulletPoints.map((point, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle2 className="h-5 w-5 text-nativeGreen mr-2.5 flex-shrink-0 mt-0.5" />
@@ -271,15 +280,17 @@ export default function Home() {
                     ))}
                   </ul>
 
-                  <Button
-                    variant="default"
-                    onClick={() => handleServiceClick(service)}
-                    className="w-full py-6 text-base font-medium shadow-md hover:shadow-lg"
-                    size="lg"
-                  >
-                    <Calendar className="h-5 w-5 mr-2" />
-                    {service.ctaText}
-                  </Button>
+                  <div className="mt-6">
+                    <Button
+                      variant="default"
+                      onClick={() => handleServiceClick(service)}
+                      className="w-full py-6 text-base font-medium shadow-md"
+                      size="lg"
+                    >
+                      <Calendar className="h-5 w-5 mr-2" />
+                      {service.ctaText}
+                    </Button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -288,6 +299,36 @@ export default function Home() {
 
         {/* Section Divider */}
         <div className="section-divider"></div>
+
+        {/* Our Process Section */}
+        <section id="process" className="py-20 relative section-process">
+          <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-black section-title mb-6">
+                Our Process
+              </h2>
+              <p className="text-lg text-black/80">
+                We follow a collaborative, iterative approach to deliver AI solutions that truly meet your business needs and drive measurable results.
+              </p>
+              <Button size="lg" asChild className="shadow-lg">
+                <a href="#contact">Learn More</a>
+              </Button>
+            </div>
+            <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="/placeholder.svg?height=800&width=800"
+                alt="Our Process"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Section Divider */}
+        <div className="section-divider-reverse"></div>
 
         {/* About Section */}
         <section id="about" className="py-20 relative section-about">
@@ -310,7 +351,12 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-bold text-lg mb-4">Native AI</h3>
+              <h3 className="font-bold text-lg mb-4 flex items-center">
+                <span className="w-9 h-9 flex items-center justify-center bg-nativeCream rounded-lg mr-3 shadow-sm">
+                  <span className="text-lg">🌱</span>
+                </span>
+                Native AI
+              </h3>
               <p className="text-white/80 text-sm">Transforming businesses through innovative AI solutions.</p>
             </div>
             <div>
@@ -324,6 +370,11 @@ export default function Home() {
                 <li>
                   <a href="#services" className="text-sm text-nativeCyan hover:text-nativeCyan/80">
                     Services
+                  </a>
+                </li>
+                <li>
+                  <a href="#process" className="text-sm text-nativeCyan hover:text-nativeCyan/80">
+                    Process
                   </a>
                 </li>
               </ul>
