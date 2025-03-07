@@ -154,7 +154,7 @@ export default function Home() {
                 Become an <span className="text-gradient">AI-First</span> Company
               </h1>
               <p className="text-lg md:text-xl text-black/80 text-center md:text-left">
-                Launch AI-native apps and engaging conversational experiences that solve real-world customer problems and amplify your team's productivity.
+              Launch AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button size="lg" asChild className="shadow-lg">
@@ -196,14 +196,14 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-black section-title mb-6">
-              We Solve the AI Product Puzzle
+              Solve the AI Product Puzzle
               </h2>
               <p className="mt-4 text-lg text-black/80 max-w-2xl mx-auto">
               We address the fundamental challenges that derail most AI initiatives: validating real market needs, reducing time-to-launch, and navigating complex technology decisions.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 max-w-screen-xl mx-auto">
               {/* Card 1 */}
               <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
