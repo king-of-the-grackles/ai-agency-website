@@ -195,10 +195,7 @@ export default function Home() {
                   size="lg" 
                   variant="outline" 
                   className="border-black text-black hover:bg-black/10 cursor-pointer"
-                  onClick={() => {
-                    // Use a simple href approach instead
-                    window.location.href = "#services";
-                  }}
+                  onClick={() => handleScroll('services')}
                 >
                   Explore Services
                 </Button>
