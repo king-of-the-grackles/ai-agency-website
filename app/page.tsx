@@ -39,13 +39,15 @@ export default function Home() {
   const services: Service[] = [
     {
       id: "custom-ai",
-      title: "Custom AI Implementations",
+      title: "AI Prototype Design & Implementation",
       description:
-        "We design and develop bespoke AI solutions tailored to your specific business needs. From intelligent AI Agents and Automations to sophisticated Voice Agents and Chatbots, we create systems that enhance efficiency and customer engagement.",
+        "Turn your product vision into a working AI prototype in weeks, not months. We build focused solutions that validate core assumptions, generate user feedback, and create scalable foundations for future growth.",
       bulletPoints: [
-        "AI-powered chatbots and virtual assistants",
-        "Custom language models fine-tuned to your domain",
-        "Seamless integration with existing systems",
+        "Rapid AI concept validation with minimal investment",
+        "Custom AI solution development tailored to your specific use case",
+        "Integration planning with your existing product architecture",
+        "User testing framework to gather actionable feedback",
+        "Technical implementation with scalability in mind",
       ],
       icon: <Zap className="h-6 w-6 text-nativeOrange" />,
       ctaText: "Book a Call",
@@ -53,13 +55,15 @@ export default function Home() {
     },
     {
       id: "consulting",
-      title: "Consulting & Coaching",
+      title: "AI Strategy Consulting",
       description:
-        "Our expert consultants provide strategic insights to help you navigate the AI landscape. We identify opportunities for operational improvements, cost savings, and competitive advantages through thoughtful AI integration.",
+        "Advance your AI product vision with strategic guidance that cuts through complexity. We help founders and product teams identify opportunities and implement features that create genuine competitive advantage.",
       bulletPoints: [
-        "AI readiness assessment and gap analysis",
-        "Strategic roadmap development",
-        "ROI-focused implementation planning",
+        "Clear-eyed assessment of where AI can actually add business and customer value",
+        "Customer journey mapping and AI roadmap development",
+        "Hands-on assistance with prompt engineering and conversational design",
+        "Competitive analysis and differentiation strategy",
+        "What other challenges can we solve for you?",
       ],
       icon: <Brain className="h-6 w-6 text-nativeOrange" />,
       ctaText: "Book a Call",
@@ -67,29 +71,16 @@ export default function Home() {
     },
     {
       id: "training",
-      title: "Team Trainings",
+      title: "AI-First Product Ops Workshop",
       description:
-        "Empower your workforce with practical AI knowledge. Our training programs focus on upskilling staff, ensuring seamless AI adoption, and fostering a culture of innovation that prepares your organization for the future.",
+        "Reimagine your product operations with an AI-first approach. Our training equips teams to integrate AI throughout their workflow—automating repetitive tasks, enhancing research, and improving prioritization—allowing your team to focus on high-leverage activities that directly impact growth.",
       bulletPoints: [
-        "Customized workshops for technical and non-technical teams",
-        "Hands-on learning with real-world applications",
-        "Ongoing support and knowledge resources",
+        "Tailored AI workshops addressing your team's unique operational bottlenecks",
+        "Rapid prototyping approaches using AI coding and design tools",
+        "Prompt engineering fundamentals for effective AI tool utilization",
+        "Using AI tools to uncover hidden opportunities in customer feedback",
       ],
       icon: <Users className="h-6 w-6 text-nativeOrange" />,
-      ctaText: "Book a Call",
-      ctaTheme: "default",
-    },
-    {
-      id: "strategy",
-      title: "AI Strategy & Roadmap",
-      description:
-        "We collaborate with your leadership team to develop comprehensive AI strategies and implementation roadmaps. Our approach ensures alignment with business objectives, prioritizes high-impact initiatives, and creates a clear path to AI maturity.",
-      bulletPoints: [
-        "Competitive analysis and market positioning",
-        "Phased implementation planning",
-        "Risk assessment and mitigation strategies",
-      ],
-      icon: <BarChart3 className="h-6 w-6 text-nativeOrange" />,
       ctaText: "Book a Call",
       ctaTheme: "default",
     },
