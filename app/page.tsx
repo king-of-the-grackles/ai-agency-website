@@ -36,9 +36,14 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   
   function handleScroll(id: string) {
+    console.log("Scrolling to:", id); // Add debugging
     const element = document.getElementById(id);
+    console.log("Element found:", !!element); // Check if element exists
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback to direct anchor navigation if element not found
+      window.location.href = `#${id}`;
     }
   }
 
@@ -191,14 +196,18 @@ export default function Home() {
                 >
                   Work With Us
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-black text-black hover:bg-black/10 cursor-pointer"
-                  onClick={() => handleScroll('services')}
+                <div 
+                  onClick={() => handleScroll('services')} 
+                  className="inline-block cursor-pointer"
                 >
-                  Explore Services
-                </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-black text-black hover:bg-black/10 w-full"
+                  >
+                    Explore Services
+                  </Button>
+                </div>
               </div>
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden hidden md:block shadow-xl">
