@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Native AI - AI-Native Apps & Conversational Solutions",
   description: "Transforming businesses through Custom AI, Voice Agents, Chatbots, Consulting, and Team Trainings.",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -26,7 +26,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

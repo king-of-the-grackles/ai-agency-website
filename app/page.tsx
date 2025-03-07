@@ -196,18 +196,28 @@ export default function Home() {
                 >
                   Work With Us
                 </Button>
-                <div 
-                  onClick={() => handleScroll('services')} 
-                  className="inline-block cursor-pointer"
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-black text-black hover:bg-black/10"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    // Force scroll to element
+                    const element = document.getElementById('services');
+                    if (element) {
+                      // Try both methods
+                      element.scrollIntoView({ behavior: 'smooth' });
+                      setTimeout(() => {
+                        window.location.href = '#services';
+                      }, 100);
+                    } else {
+                      window.location.href = '#services';
+                    }
+                  }}
                 >
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-black text-black hover:bg-black/10 w-full"
-                  >
-                    Explore Services
-                  </Button>
-                </div>
+                  Explore Services
+                </Button>
               </div>
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden hidden md:block shadow-xl">
