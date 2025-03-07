@@ -31,11 +31,16 @@ export function BookingModal({ isOpen, onClose, serviceTitle, ctaText }: Booking
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate API call to save email
-    await new Promise((resolve) => setTimeout(resolve, 800))
-
-    setStep("calendly")
-    setIsSubmitting(false)
+    try {
+      // Simulate API call to save email
+      await new Promise((resolve) => setTimeout(resolve, 800))
+      setStep("calendly")
+    } catch (error) {
+      console.error("Error submitting email:", error)
+      // You could set an error state here and show an error message
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleClose = () => {

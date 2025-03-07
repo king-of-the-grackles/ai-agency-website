@@ -215,9 +215,9 @@ export default function Home() {
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <Zap className="h-6 w-6 text-nativeOrange" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">Expertise</h3>
+                <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">Turn Vision Into Traction</h3>
                 <p className="text-black/80 text-center md:text-left">
-                  Deep technical knowledge and industry experience to deliver results that transform your business.
+                Transform your concept into a product users love. We validate core assumptions through targeted discovery, focus development on high-impact features, and build solutions that drive early adoption.
                 </p>
               </div>
               
@@ -226,9 +226,9 @@ export default function Home() {
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <Brain className="h-6 w-6 text-nativeOrange" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">Innovation</h3>
+                <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">Launch in 30 Days, Not Months</h3>
                 <p className="text-black/80 text-center md:text-left">
-                  Cutting-edge solutions that keep you ahead of the competition in the rapidly evolving AI landscape.
+                Get a functional prototype into users' hands in just 30 days. Our AI-augmented development approach compresses the build cycle, delivering real feedback faster and preserving runway for critical iterations while competitors are still building.
                 </p>
               </div>
               
@@ -237,9 +237,9 @@ export default function Home() {
                 <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
                   <Users className="h-6 w-6 text-nativeOrange" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">Partnership</h3>
+                <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">Demystifying Your AI Tech Stack</h3>
                 <p className="text-black/80 text-center md:text-left">
-                  We work alongside you to ensure long-term success and growth with sustainable AI solutions.
+                Navigate the complex landscape of AI tools with confidence. We cut through the noise of emerging frameworks to design and implement a tailored tech stack that aligns with your product vision, user needs, and scalability requirements.
                 </p>
               </div>
             </div>

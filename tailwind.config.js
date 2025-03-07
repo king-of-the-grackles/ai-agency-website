@@ -50,7 +50,12 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        }
+        },
+        // Native AI brand colors
+        nativeCyan: "hsl(var(--nativeCyan))",
+        nativeOrange: "hsl(var(--nativeOrange))",
+        nativeGreen: "hsl(var(--nativeGreen))",
+        nativeCream: "hsl(var(--nativeCream))"
       },
       borderRadius: {
         lg: "var(--radius)",
