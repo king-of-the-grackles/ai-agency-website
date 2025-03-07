@@ -36,15 +36,8 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   
   function handleScroll(id: string) {
-    console.log("Scrolling to:", id); // Add debugging
-    const element = document.getElementById(id);
-    console.log("Element found:", !!element); // Check if element exists
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // Fallback to direct anchor navigation if element not found
-      window.location.href = `#${id}`;
-    }
+    // Simple direct anchor navigation
+    window.location.href = `#${id}`;
   }
 
   // Define services with themed CTAs
@@ -115,35 +108,30 @@ export default function Home() {
             Native AI
           </div>
           <nav className="hidden md:flex space-x-6">
-            <button 
-              onClick={() => handleScroll('about')}
+            <a 
+              href="#about"
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
             >
               About
-            </button>
-            <button 
-              onClick={() => handleScroll('services')}
+            </a>
+            <a 
+              href="#services"
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
             >
               Services
-            </button>
-            <button 
-              onClick={() => handleScroll('process')}
+            </a>
+            <a 
+              href="#process"
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
             >
               Process
-            </button>
-            <button 
-              onClick={() => {
-                const footer = document.querySelector('footer');
-                if (footer) {
-                  footer.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
+            </a>
+            <a 
+              href="#footer"
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
             >
               Contact
-            </button>
+            </a>
           </nav>
           <Button 
             size="sm" 
@@ -196,28 +184,18 @@ export default function Home() {
                 >
                   Work With Us
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-black text-black hover:bg-black/10"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    // Force scroll to element
-                    const element = document.getElementById('services');
-                    if (element) {
-                      // Try both methods
-                      element.scrollIntoView({ behavior: 'smooth' });
-                      setTimeout(() => {
-                        window.location.href = '#services';
-                      }, 100);
-                    } else {
-                      window.location.href = '#services';
-                    }
-                  }}
+                <a
+                  href="#services"
+                  className="inline-block"
                 >
-                  Explore Services
-                </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-black text-black hover:bg-black/10"
+                  >
+                    Explore Services
+                  </Button>
+                </a>
               </div>
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden hidden md:block shadow-xl">
@@ -396,7 +374,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-black py-12 text-white">
+      <footer id="footer" className="bg-black py-12 text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
