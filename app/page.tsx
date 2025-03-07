@@ -196,10 +196,10 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-black section-title mb-6">
-                Why Choose Native AI
+              We Solve the AI Product Puzzle
               </h2>
               <p className="mt-4 text-lg text-black/80 max-w-2xl mx-auto">
-                We help businesses leverage AI technology to solve real problems and create meaningful value.
+              We address the fundamental challenges that derail most AI initiatives: validating real market needs, reducing time-to-launch, and navigating complex technology decisions.
               </p>
             </div>
             
