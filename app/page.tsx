@@ -203,12 +203,6 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="text-center mb-12">
-              <Button size="lg" asChild className="px-8 shadow-lg">
-                <a href="#services">Discover Our Approach</a>
-              </Button>
-            </div>
-            
             <div className="grid md:grid-cols-3 gap-8">
               {/* Card 1 */}
               <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
