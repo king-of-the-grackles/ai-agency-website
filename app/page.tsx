@@ -240,10 +240,13 @@ export default function Home() {
           <div className="container relative mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-black section-title mb-6">
-                Our Services
+              Navigate AI with Confidence
               </h2>
+              <p className="mt-4 text-lg text-black/80 max-w-2xl mx-auto">
+                Accelerate product decisions with focused prototype development, strategic AI consulting, and hands-on training.
+              </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {services.map((service) => (
                 <div
                   key={service.id}
