@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import {
   ChevronDown,
@@ -34,6 +34,13 @@ type Service = {
 export default function Home() {
   const [activeService, setActiveService] = useState<Service | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  
+  function handleScroll(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   // Define services with themed CTAs
   const services: Service[] = [
@@ -103,21 +110,46 @@ export default function Home() {
             Native AI
           </div>
           <nav className="hidden md:flex space-x-6">
-            <a href="#about" className="text-sm font-medium text-black hover:text-nativeCyan">
+            <button 
+              onClick={() => handleScroll('about')}
+              className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
+            >
               About
-            </a>
-            <a href="#services" className="text-sm font-medium text-black hover:text-nativeCyan">
+            </button>
+            <button 
+              onClick={() => handleScroll('services')}
+              className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
+            >
               Services
-            </a>
-            <a href="#process" className="text-sm font-medium text-black hover:text-nativeCyan">
+            </button>
+            <button 
+              onClick={() => handleScroll('process')}
+              className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
+            >
               Process
-            </a>
-            <a href="#contact" className="text-sm font-medium text-black hover:text-nativeCyan">
+            </button>
+            <button 
+              onClick={() => {
+                const footer = document.querySelector('footer');
+                if (footer) {
+                  footer.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
+            >
               Contact
-            </a>
+            </button>
           </nav>
-          <Button asChild size="sm" className="hidden md:flex">
-            <a href="#contact">Work With Us</a>
+          <Button 
+            size="sm" 
+            className="hidden md:flex"
+            onClick={() => {
+              const emailLink = document.createElement('a');
+              emailLink.href = 'mailto:contact@thinknative.ai';
+              emailLink.click();
+            }}
+          >
+            Work With Us
           </Button>
           <Button variant="ghost" size="icon" className="md:hidden">
             <ChevronDown className="h-5 w-5" />
@@ -148,16 +180,27 @@ export default function Home() {
               Launch AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Button size="lg" asChild className="shadow-lg">
-                  <a href="mailto:contact@thinknative.ai">Work With Us</a>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  asChild
-                  className="border-nativeOrange text-nativeOrange hover:bg-nativeOrange/10"
+                <Button 
+                  size="lg" 
+                  className="shadow-lg"
+                  onClick={() => {
+                    const emailLink = document.createElement('a');
+                    emailLink.href = 'mailto:contact@thinknative.ai';
+                    emailLink.click();
+                  }}
                 >
-                  <a href="#services">Explore Services</a>
+                  Work With Us
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-black text-black hover:bg-black/10 cursor-pointer"
+                  onClick={() => {
+                    // Use a simple href approach instead
+                    window.location.href = "#services";
+                  }}
+                >
+                  Explore Services
                 </Button>
               </div>
             </div>
@@ -171,11 +214,13 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 animate-bounce">
+          {/* Down arrow removed temporarily
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10">
             <a href="#services" className="flex items-center justify-center h-10 w-10 rounded-full bg-white shadow-md">
-              <ChevronDown className="h-5 w-5 text-nativeOrange" />
+              <ChevronDown className="h-5 w-5 text-black" />
             </a>
           </div>
+          */}
         </section>
 
         {/* Section Divider */}
