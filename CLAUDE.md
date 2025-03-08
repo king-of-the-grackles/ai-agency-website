@@ -5,18 +5,17 @@
 - `npm run build` - Build production application
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint for code linting
-- `npm run test` - Run tests (if implemented)
-- `npm run typecheck` - Run TypeScript type checking (if implemented)
+- To run a specific test: `npm test -- -t "test name"` (when implemented)
 
 ## Code Style Guidelines
-- **TypeScript**: Use strict typing with interfaces/types for props and state
-- **React**: Functional components with hooks; include "use client" directive for client components
-- **Naming**: PascalCase for components, camelCase for functions/variables, kebab-case for filenames
+- **TypeScript**: Strict typing with interfaces/types for props and state; paths alias `@/*`
+- **React**: Functional components with hooks; "use client" directive for client components
+- **Naming**: PascalCase for components/types, camelCase for functions/variables, kebab-case for files
 - **Imports**: Order: 1) React/Next.js, 2) External libraries, 3) Components, 4) Utils/Types
-- **UI Components**: Use Shadcn UI components and follow their patterns
-- **Formatting**: 2-space indentation, max 80-100 chars per line, consistent spacing
-- **Error Handling**: Try/catch for async operations, proper error states in UI
-- **CSS**: Tailwind utility classes; use `cn()` from lib/utils.ts to merge class names
+- **Formatting**: 2-space indentation, single quotes, max 100 chars per line
+- **Error Handling**: Try/catch for async operations; provide user feedback for errors
+- **CSS**: Tailwind utility classes; use `cn()` from lib/utils.ts for conditional classes
+- **Components**: Use Shadcn UI with Radix primitives; follow accessibility best practices
 - **Forms**: react-hook-form with zod validation schemas
 - **State Management**: React hooks (useState, useContext) for component/app state
 
@@ -28,7 +27,7 @@
 - `/public`: Static assets and images
 
 ## Development Practices
-- Test components in the browser at different viewport sizes
-- Follow accessibility best practices using Radix UI primitives
-- Use Next.js App Router patterns for routing and data fetching
-- Maintain responsive design using Tailwind's responsive modifiers
+- Test across different viewport sizes; maintain responsive design with Tailwind
+- Follow Next.js App Router patterns for routing and data fetching
+- Destructure props at component level; use React.forwardRef where needed
+- Group component files by feature; keep UI primitives in components/ui/

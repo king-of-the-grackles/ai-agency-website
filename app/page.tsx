@@ -121,10 +121,10 @@ export default function Home() {
               Services
             </a>
             <a 
-              href="#process"
+              href="#journey"
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
             >
-              Process
+              Journey
             </a>
             <a 
               href="#footer"
@@ -153,10 +153,10 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-10 md:py-16 relative overflow-hidden section-hero">
-          <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
-          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+        <section className="py-10 md:py-16 relative overflow-visible section-hero" style={{ userSelect: 'text' }}>
+          <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
+          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative">
+            <div className="space-y-6 relative z-10" style={{ userSelect: 'text' }}>
               <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-6 md:hidden shadow-xl">
                 <Image
                   src="/placeholder.svg?height=800&width=800"
@@ -166,36 +166,28 @@ export default function Home() {
                   priority
                 />
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black text-center md:text-left">
-                Become an <span className="text-gradient">AI-First</span> Company
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black text-center md:text-left" style={{ userSelect: 'text' }}>
+                Become an <span className="text-gradient" style={{ userSelect: 'text' }}>AI-First</span> Company
               </h1>
-              <p className="text-lg md:text-xl text-black/80 text-center md:text-left">
+              <p className="text-lg md:text-xl text-black/80 text-center md:text-left" style={{ userSelect: 'text' }}>
               Launch AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start" style={{ userSelect: 'none' }}>
                 <Button 
                   size="lg" 
-                  className="shadow-lg"
-                  onClick={() => {
-                    const emailLink = document.createElement('a');
-                    emailLink.href = 'mailto:contact@thinknative.ai';
-                    emailLink.click();
-                  }}
+                  className="shadow-lg cursor-pointer"
+                  asChild
                 >
-                  Work With Us
+                  <a href="mailto:contact@thinknative.ai">Book a Discovery Call</a>
                 </Button>
-                <a
-                  href="#services"
-                  className="inline-block"
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-black text-black hover:bg-black/10 cursor-pointer"
+                  asChild
                 >
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-black text-black hover:bg-black/10"
-                  >
-                    Explore Services
-                  </Button>
-                </a>
+                  <a href="#services">Explore Services</a>
+                </Button>
               </div>
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden hidden md:block shadow-xl">
@@ -327,29 +319,63 @@ export default function Home() {
         {/* Section Divider */}
         <div className="section-divider"></div>
 
-        {/* Our Process Section */}
-        <section id="process" className="py-20 relative section-process">
+        {/* Your Journey Section */}
+        <section id="journey" className="py-20 relative section-journey">
           <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
-          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-black section-title mb-6">
-                Our Process
-              </h2>
-              <p className="text-lg text-black/80">
+          <div className="container mx-auto px-4">
+            {/* Desktop layout */}
+            <div className="hidden md:grid md:grid-cols-12 gap-6 items-center">
+              <div className="space-y-5 md:col-span-5">
+                <h2 className="text-3xl font-bold text-black section-title mb-4">
+                  Your Journey With Native AI
+                </h2>
+                <p className="text-lg text-black/80">
+                  We follow a collaborative, iterative approach to deliver AI solutions that truly meet your business needs and drive measurable results.
+                </p>
+                <Button size="lg" asChild className="shadow-lg">
+                  <a href="mailto:contact@thinknative.ai">Book a Discovery Call</a>
+                </Button>
+              </div>
+              <div className="relative w-full h-[380px] rounded-lg overflow-hidden shadow-xl md:col-span-7 md:ml-auto md:max-w-xl lg:max-w-2xl">
+                <Image
+                  src="/our-process-new.svg"
+                  alt="Your Journey With Native AI"
+                  fill
+                  className="object-contain bg-white p-2"
+                  priority
+                  sizes="(max-width: 1024px) 60vw, 50vw"
+                />
+              </div>
+            </div>
+            
+            {/* Mobile layout with centered elements */}
+            <div className="md:hidden space-y-6">
+              <div className="text-center">
+                <h2 className="text-3xl font-bold text-black section-title mb-4">
+                  Your Journey With Native AI
+                </h2>
+              </div>
+              
+              <div className="relative w-full h-[320px] rounded-lg overflow-hidden shadow-xl">
+                <Image
+                  src="/our-process-new.svg"
+                  alt="Your Journey With Native AI"
+                  fill
+                  className="object-contain bg-white p-2"
+                  priority
+                  sizes="100vw"
+                />
+              </div>
+              
+              <p className="text-lg text-black/80 text-center">
                 We follow a collaborative, iterative approach to deliver AI solutions that truly meet your business needs and drive measurable results.
               </p>
-              <Button size="lg" asChild className="shadow-lg">
-                <a href="#contact">Learn More</a>
-              </Button>
-            </div>
-            <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/placeholder.svg?height=800&width=800"
-                alt="Our Process"
-                fill
-                className="object-cover"
-                priority
-              />
+              
+              <div className="flex justify-center">
+                <Button size="lg" asChild className="shadow-lg">
+                  <a href="mailto:contact@thinknative.ai">Book a Discovery Call</a>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
