@@ -301,6 +301,20 @@
     }
   }
 
+  /* Calendly widget styling fixes */
+  .calendly-popup {
+    background-color: transparent !important;
+  }
+
+  .calendly-popup .calendly-popup-content {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+  }
+
+  .calendly-popup .calendly-popup-overlay {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+  }
+
   .section-why-us {
     background: linear-gradient(135deg, rgba(39, 174, 96, 0.08) 0%, rgba(39, 174, 96, 0.03) 100%);
   }
