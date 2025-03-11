@@ -16,9 +16,11 @@ import {
   Twitter,
   Calendar,
   CheckCircle2,
+  Rocket,
+  Telescope,
+  Compass,
 } from "lucide-react"
 import Image from "next/image"
-import { BookingModal } from "@/components/booking-modal"
 
 // Define service types for type safety
 type Service = {
@@ -32,8 +34,7 @@ type Service = {
 }
 
 export default function Home() {
-  const [activeService, setActiveService] = useState<Service | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  // Calendar functionality is handled directly in the button click handlers
   
   function handleScroll(id: string) {
     // Simple direct anchor navigation
@@ -54,8 +55,8 @@ export default function Home() {
         "User testing framework to gather actionable feedback",
         "Technical implementation with scalability in mind",
       ],
-      icon: <Zap className="h-6 w-6 text-nativeOrange" />,
-      ctaText: "Book a Call",
+      icon: <Zap className="h-7 w-7 text-black" />,
+      ctaText: "Book a Discovery Call",
       ctaTheme: "default",
     },
     {
@@ -70,8 +71,8 @@ export default function Home() {
         "Competitive analysis and differentiation strategy",
         "What other challenges can we solve for you?",
       ],
-      icon: <Brain className="h-6 w-6 text-nativeOrange" />,
-      ctaText: "Book a Call",
+      icon: <Brain className="h-7 w-7 text-black" />,
+      ctaText: "Book a Discovery Call",
       ctaTheme: "default",
     },
     {
@@ -85,15 +86,18 @@ export default function Home() {
         "Prompt engineering fundamentals for effective AI tool utilization",
         "Using AI tools to uncover hidden opportunities in customer feedback",
       ],
-      icon: <Users className="h-6 w-6 text-nativeOrange" />,
-      ctaText: "Book a Call",
+      icon: <Users className="h-7 w-7 text-black" />,
+      ctaText: "Book a Discovery Call",
       ctaTheme: "default",
     },
   ]
 
   const handleServiceClick = (service: Service) => {
-    setActiveService(service)
-    setIsModalOpen(true)
+    // @ts-ignore
+    window.Calendly?.initPopupWidget({
+      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+    });
+    return false;
   }
 
   return (
@@ -137,9 +141,11 @@ export default function Home() {
             size="sm" 
             className="hidden md:flex"
             onClick={() => {
-              const emailLink = document.createElement('a');
-              emailLink.href = 'mailto:contact@thinknative.ai';
-              emailLink.click();
+              // @ts-ignore
+              window.Calendly?.initPopupWidget({
+                url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+              });
+              return false;
             }}
           >
             Work With Us
@@ -176,9 +182,15 @@ export default function Home() {
                 <Button 
                   size="lg" 
                   className="shadow-lg cursor-pointer"
-                  asChild
+                  onClick={() => {
+                    // @ts-ignore
+                    window.Calendly?.initPopupWidget({
+                      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+                    });
+                    return false;
+                  }}
                 >
-                  <a href="mailto:contact@thinknative.ai">Book a Discovery Call</a>
+                  Book a Discovery Call
                 </Button>
                 <Button 
                   size="lg" 
@@ -228,33 +240,33 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8 max-w-screen-xl mx-auto">
               {/* Card 1 */}
               <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
-                <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
-                  <Zap className="h-6 w-6 text-nativeOrange" />
+                <div className="h-12 w-12 bg-white rounded-lg flex items-center justify-center mb-4 mx-auto border-2 border-black">
+                  <Telescope className="h-6 w-6 text-black" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">Turn Vision Into Traction</h3>
-                <p className="text-black/80 text-center md:text-left">
+                <h3 className="text-xl font-bold mb-3 text-black text-center">Turn Vision Into Traction</h3>
+                <p className="text-black/80 text-center">
                 Transform your concept into a product users love. We validate core assumptions through targeted discovery, focus development on high-impact features, and build solutions that drive early adoption.
                 </p>
               </div>
               
               {/* Card 2 */}
               <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
-                <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
-                  <Brain className="h-6 w-6 text-nativeOrange" />
+                <div className="h-12 w-12 bg-white rounded-lg flex items-center justify-center mb-4 mx-auto border-2 border-black">
+                  <Rocket className="h-6 w-6 text-black" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">Launch in 30 Days, Not Months</h3>
-                <p className="text-black/80 text-center md:text-left">
+                <h3 className="text-xl font-bold mb-3 text-black text-center">Launch in 30 Days, Not Months</h3>
+                <p className="text-black/80 text-center">
                 Get a functional prototype into users' hands in just 30 days. Our AI-augmented development approach compresses the build cycle, delivering real feedback faster and preserving runway for critical iterations while competitors are still building.
                 </p>
               </div>
               
               {/* Card 3 */}
               <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
-                <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
-                  <Users className="h-6 w-6 text-nativeOrange" />
+                <div className="h-12 w-12 bg-white rounded-lg flex items-center justify-center mb-4 mx-auto border-2 border-black">
+                  <Compass className="h-6 w-6 text-black" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">Demystifying Your AI Tech Stack</h3>
-                <p className="text-black/80 text-center md:text-left">
+                <h3 className="text-xl font-bold mb-3 text-black text-center">Demystifying Your AI Tech Stack</h3>
+                <p className="text-black/80 text-center">
                 Navigate the complex landscape of AI tools with confidence. We cut through the noise of emerging frameworks to design and implement a tailored tech stack that aligns with your product vision, user needs, and scalability requirements.
                 </p>
               </div>
@@ -277,37 +289,56 @@ export default function Home() {
                 Accelerate product decisions with focused prototype development, strategic AI consulting, and hands-on training.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid gap-8 max-w-5xl mx-auto">
               {services.map((service) => (
                 <div
                   key={service.id}
-                  className="bg-white rounded-lg p-6 shadow-md border border-nativeCream flex flex-col h-full"
+                  className="bg-white rounded-lg p-8 shadow-md border border-nativeCream flex flex-col h-full"
                 >
-                  <div className="h-12 w-12 bg-nativeCream rounded-lg flex items-center justify-center mb-4 mx-auto md:mx-0">
-                    {service.icon}
+                  <div className="flex items-center mb-3">
+                    <div className="h-14 w-14 bg-white rounded-lg flex items-center justify-center mr-3 border-2 border-black shrink-0">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-black">{service.title}</h3>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-black text-center md:text-left">{service.title}</h3>
-                  <p className="text-black/80 mb-5 text-center md:text-left">{service.description}</p>
+                  <p className="text-black/80 mb-4 text-left">{service.description}</p>
+                  
+                  {/* Divider */}
+                  <div className="h-px bg-gray-200 my-4"></div>
 
                   {/* Bullet Points */}
-                  <ul className="space-y-3 flex-grow">
-                    {service.bulletPoints.map((point, index) => (
-                      <li key={index} className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-nativeGreen mr-2.5 flex-shrink-0 mt-0.5" />
-                        <span className="text-black/90">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex-grow">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {service.bulletPoints.map((point, index) => (
+                        <div 
+                          key={index} 
+                          className={`flex items-start ${
+                            service.bulletPoints.length === 5 && index === 4 
+                              ? 'md:col-span-2 max-w-md mx-auto' 
+                              : ''
+                          }`}
+                        >
+                          <CheckCircle2 className="h-5 w-5 text-nativeGreen mr-2.5 flex-shrink-0 mt-0.5" />
+                          <span className="text-black/90">{point}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
-                  <div className="mt-6">
+                  {/* Divider */}
+                  <div className="h-px bg-gray-200 my-4"></div>
+
+                  <div className="mt-4 flex justify-center">
                     <Button
                       variant="default"
                       onClick={() => handleServiceClick(service)}
-                      className="w-full py-6 text-base font-medium shadow-md"
+                      className="px-10 py-6 text-base font-semibold shadow-md w-56 tracking-wide hover:scale-105 transition-transform duration-200 rounded-xl"
                       size="lg"
                     >
-                      <Calendar className="h-5 w-5 mr-2" />
-                      {service.ctaText}
+                      <div className="flex items-center justify-center gap-3">
+                        <Calendar className="h-5 w-5" />
+                        <span>{service.ctaText}</span>
+                      </div>
                     </Button>
                   </div>
                 </div>
@@ -320,60 +351,86 @@ export default function Home() {
         <div className="section-divider"></div>
 
         {/* Your Journey Section */}
-        <section id="journey" className="py-20 relative section-journey">
-          <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
-          <div className="container mx-auto px-4">
+        <section id="journey" className="py-16 md:py-20 relative section-journey" style={{ userSelect: 'text', pointerEvents: 'auto' }}>
+          <div className="absolute inset-0 bg-pattern-dots opacity-15 pointer-events-none"></div>
+          <div className="container mx-auto px-2 md:px-4">
             {/* Desktop layout */}
-            <div className="hidden md:grid md:grid-cols-12 gap-6 items-center">
-              <div className="space-y-5 md:col-span-5">
-                <h2 className="text-3xl font-bold text-black section-title mb-4">
-                  Your Journey With Native AI
+            <div className="hidden md:grid md:grid-cols-12 gap-5 items-center">
+              <div className="space-y-4 md:col-span-5">
+                <h2 className="text-3xl font-bold text-black section-title mb-3" style={{ userSelect: 'text' }}>
+                  Native AI Journey
                 </h2>
-                <p className="text-lg text-black/80">
+                <p className="text-lg text-black/80" style={{ userSelect: 'text' }}>
                   We follow a collaborative, iterative approach to deliver AI solutions that truly meet your business needs and drive measurable results.
                 </p>
-                <Button size="lg" asChild className="shadow-lg">
-                  <a href="mailto:contact@thinknative.ai">Book a Discovery Call</a>
+                <Button 
+                  size="lg" 
+                  className="shadow-lg mt-2 cursor-pointer px-8 py-6 text-base font-semibold tracking-wide hover:scale-105 transition-transform duration-200 rounded-xl w-64"
+                  onClick={() => {
+                    // @ts-ignore
+                    window.Calendly?.initPopupWidget({
+                      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+                    });
+                    return false;
+                  }}
+                >
+                  <div className="flex items-center justify-center gap-3">
+                    <Calendar className="h-5 w-5" />
+                    <span>Book a Discovery Call</span>
+                  </div>
                 </Button>
               </div>
-              <div className="relative w-full h-[380px] rounded-lg overflow-hidden shadow-xl md:col-span-7 md:ml-auto md:max-w-xl lg:max-w-2xl">
+              <div className="relative w-full h-[400px] md:col-span-7 md:ml-auto md:max-w-2xl lg:max-w-3xl pointer-events-none">
                 <Image
-                  src="/our-process-new.svg"
-                  alt="Your Journey With Native AI"
+                  src="/native-ai-journey-final.svg"
+                  alt="Native AI Journey"
                   fill
-                  className="object-contain bg-white p-2"
+                  className="object-contain"
                   priority
-                  sizes="(max-width: 1024px) 60vw, 50vw"
+                  sizes="(max-width: 1024px) 65vw, 55vw"
                 />
               </div>
             </div>
             
             {/* Mobile layout with centered elements */}
-            <div className="md:hidden space-y-6">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold text-black section-title mb-4">
-                  Your Journey With Native AI
+            <div className="md:hidden space-y-3 px-2">
+              <div className="text-center mb-4 mt-2">
+                <h2 className="text-3xl font-bold text-black section-title mb-4" style={{ userSelect: 'text' }}>
+                  Native AI Journey
                 </h2>
               </div>
               
-              <div className="relative w-full h-[320px] rounded-lg overflow-hidden shadow-xl">
+              <div className="relative w-full h-[320px] mx-auto mb-4 pointer-events-none" style={{ maxWidth: "100%" }}>
                 <Image
-                  src="/our-process-new.svg"
-                  alt="Your Journey With Native AI"
+                  src="/native-ai-journey-final.svg"
+                  alt="Native AI Journey"
                   fill
-                  className="object-contain bg-white p-2"
+                  className="object-contain"
                   priority
                   sizes="100vw"
                 />
               </div>
               
-              <p className="text-lg text-black/80 text-center">
+              <p className="text-lg text-black/80 text-center px-3 mb-4" style={{ userSelect: 'text' }}>
                 We follow a collaborative, iterative approach to deliver AI solutions that truly meet your business needs and drive measurable results.
               </p>
               
-              <div className="flex justify-center">
-                <Button size="lg" asChild className="shadow-lg">
-                  <a href="mailto:contact@thinknative.ai">Book a Discovery Call</a>
+              <div className="flex justify-center mt-2 mb-2">
+                <Button 
+                  size="lg" 
+                  className="shadow-lg cursor-pointer px-8 py-6 text-base font-semibold tracking-wide hover:scale-105 transition-transform duration-200 rounded-xl w-64"
+                  onClick={() => {
+                    // @ts-ignore
+                    window.Calendly?.initPopupWidget({
+                      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+                    });
+                    return false;
+                  }}
+                >
+                  <div className="flex items-center justify-center gap-3">
+                    <Calendar className="h-5 w-5" />
+                    <span>Book a Discovery Call</span>
+                  </div>
                 </Button>
               </div>
             </div>
@@ -392,7 +449,7 @@ export default function Home() {
                 Our Mission
               </h2>
               <p className="text-lg text-black/80 mt-6">
-              Native AI seeks to revolutionize human-computer interaction by crafting intuitive, powerful, and delightful AI-native experiences. We empower businesses to seamlessly integrate cutting-edge AI solutions—reshaping how brands connect, automate, and innovate.
+              We're dedicated to democratizing AI for forward-thinking businesses by bridging the gap between emerging technologies and practical applications. We build AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works. Our mission is to empower companies with the tools, strategies, and expertise needed to become truly AI-first.
               </p>
             </div>
           </div>
@@ -402,17 +459,17 @@ export default function Home() {
       {/* Footer */}
       <footer id="footer" className="bg-black py-12 text-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
+          <div className="grid md:grid-cols-12 gap-8">
+            <div className="col-span-full md:col-span-6">
               <h3 className="font-bold text-lg mb-4 flex items-center">
                 <span className="w-9 h-9 flex items-center justify-center bg-nativeCream rounded-lg mr-3 shadow-sm">
                   <span className="text-lg">🌱</span>
                 </span>
                 Native AI
               </h3>
-              <p className="text-white/80 text-sm">Transforming businesses through innovative AI solutions.</p>
+              <p className="text-white/80 text-sm max-w-xs">Launch AI-native apps and human-centered conversational experiences that solve customer problems and transform your team.</p>
             </div>
-            <div>
+            <div className="col-span-6 md:col-span-3 mt-6 md:mt-0">
               <h3 className="font-bold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
@@ -426,13 +483,13 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="#process" className="text-sm text-nativeCyan hover:text-nativeCyan/80">
-                    Process
+                  <a href="#journey" className="text-sm text-nativeCyan hover:text-nativeCyan/80">
+                    Journey
                   </a>
                 </li>
               </ul>
             </div>
-            <div>
+            <div className="col-span-6 md:col-span-3 mt-6 md:mt-0">
               <h3 className="font-bold text-lg mb-4">Connect</h3>
               <div className="flex space-x-4">
                 <a href="#" className="text-nativeCyan hover:text-nativeCyan/80">
@@ -452,42 +509,12 @@ export default function Home() {
           </div>
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/80">
             <p>© {new Date().getFullYear()} Native AI. All rights reserved.</p>
-            <div className="mt-2 space-x-4">
-              <a href="#" className="text-nativeCyan hover:text-nativeCyan/80">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-nativeCyan hover:text-nativeCyan/80">
-                Terms of Service
-              </a>
-            </div>
-            <div className="mt-2">
-              <a href="https://thinknative.ai" className="text-nativeCyan hover:text-nativeCyan/80">
-                thinknative.ai
-              </a>
-            </div>
           </div>
         </div>
       </footer>
 
-      {/* Floating CTA for mobile */}
-      <div className="md:hidden fixed bottom-6 right-6 z-50">
-        <Button asChild size="lg" className="rounded-full shadow-lg">
-          <a href="mailto:contact@thinknative.ai">
-            <Mail className="h-5 w-5 mr-2" />
-            Contact Us
-          </a>
-        </Button>
-      </div>
 
-      {/* Booking Modal */}
-      {activeService && (
-        <BookingModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          serviceTitle={activeService.title}
-          ctaText={activeService.ctaText}
-        />
-      )}
+      {/* Calendly integration is now directly in buttons */}
     </div>
   )
 }

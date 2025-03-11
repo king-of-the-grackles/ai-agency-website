@@ -21,7 +21,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
         {children}
-        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
+        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </body>
     </html>
   )
