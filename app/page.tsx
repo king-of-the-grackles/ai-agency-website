@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { useState, useEffect } from "react"
+import { trackEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import {
   ChevronDown,
@@ -108,6 +109,10 @@ export default function Home() {
   ]
 
   const handleServiceClick = (service: Service) => {
+    trackEvent('service_card_clicked', { 
+      service_id: service.id,
+      service_title: service.title 
+    });
     // @ts-ignore
     window.Calendly?.initPopupWidget({
       url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
@@ -255,6 +260,7 @@ export default function Home() {
                   size="lg" 
                   className="shadow-lg cursor-pointer"
                   onClick={() => {
+                    trackEvent('discovery_call_clicked', { location: 'hero_section' });
                     // @ts-ignore
                     window.Calendly?.initPopupWidget({
                       url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
@@ -569,16 +575,32 @@ export default function Home() {
             <div className="col-span-6 md:col-span-3 mt-6 md:mt-0">
               <h3 className="font-bold text-lg mb-4">Connect</h3>
               <div className="flex space-x-4">
-                <a href="#" className="text-nativeCyan hover:text-nativeCyan/80">
+                <a 
+                  href="#" 
+                  className="text-nativeCyan hover:text-nativeCyan/80"
+                  onClick={() => trackEvent('social_link_clicked', { platform: 'github' })}
+                >
                   <Github className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-nativeCyan hover:text-nativeCyan/80">
+                <a 
+                  href="#" 
+                  className="text-nativeCyan hover:text-nativeCyan/80"
+                  onClick={() => trackEvent('social_link_clicked', { platform: 'linkedin' })}
+                >
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-nativeCyan hover:text-nativeCyan/80">
+                <a 
+                  href="#" 
+                  className="text-nativeCyan hover:text-nativeCyan/80"
+                  onClick={() => trackEvent('social_link_clicked', { platform: 'twitter' })}
+                >
                   <Twitter className="h-5 w-5" />
                 </a>
-                <a href="mailto:contact@thinknative.ai" className="text-nativeCyan hover:text-nativeCyan/80">
+                <a 
+                  href="mailto:contact@thinknative.ai" 
+                  className="text-nativeCyan hover:text-nativeCyan/80"
+                  onClick={() => trackEvent('social_link_clicked', { platform: 'email' })}
+                >
                   <Mail className="h-5 w-5" />
                 </a>
               </div>

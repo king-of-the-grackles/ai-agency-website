@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Script from "next/script"
+import { PostHogProvider } from "./providers"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -85,7 +86,9 @@ export default function RootLayout({
         <link rel="alternate icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        {children}
+        <PostHogProvider>
+          {children}
+        </PostHogProvider>
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
       </body>
     </html>
