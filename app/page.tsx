@@ -156,7 +156,7 @@ export default function Home() {
                 handleScroll("journey");
               }}
             >
-              Journey
+              Our Process
             </a>
           </nav>
           <Button 
@@ -213,7 +213,7 @@ export default function Home() {
                 handleScroll("journey");
               }}
             >
-              Journey
+              Our Process
             </a>
             <Button 
               size="sm" 
@@ -415,7 +415,7 @@ export default function Home() {
             <div className="hidden md:grid md:grid-cols-12 gap-5 items-center">
               <div className="space-y-4 md:col-span-5">
                 <h2 className="text-3xl font-bold text-black section-title mb-3" style={{ userSelect: 'text' }}>
-                  Native AI Journey
+                  The Native AI Process
                 </h2>
                 <p className="text-lg text-black/80" style={{ userSelect: 'text' }}>
                   We follow a collaborative, iterative approach to deliver AI solutions that truly meet your business needs and drive measurable results.
@@ -453,7 +453,7 @@ export default function Home() {
             <div className="md:hidden space-y-3 px-2">
               <div className="text-center mb-4 mt-2">
                 <h2 className="text-3xl font-bold text-black section-title mb-4" style={{ userSelect: 'text' }}>
-                  Native AI Journey
+                  The Native AI Process
                 </h2>
               </div>
               
@@ -499,9 +499,9 @@ export default function Home() {
 
         {/* About Section */}
         <section id="about" className="py-20 relative section-about">
-          <div className="absolute inset-0 bg-wave-pattern opacity-25"></div>
+          <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
           <div className="container relative mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center bg-white/70 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+            <div className="max-w-3xl mx-auto text-center bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
               <h2 className="text-3xl font-bold text-black section-title mb-6">
                 Our Mission
               </h2>
@@ -562,7 +562,7 @@ export default function Home() {
                       handleScroll("journey");
                     }}
                   >
-                    Journey
+                    Our Process
                   </a>
                 </li>
               </ul>
