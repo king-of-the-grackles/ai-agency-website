@@ -35,10 +35,12 @@ type Service = {
 
 export default function Home() {
   // Calendar functionality is handled directly in the button click handlers
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   function handleScroll(id: string) {
     // Simple direct anchor navigation
     window.location.href = `#${id}`;
+    setMobileMenuOpen(false); // Close menu after clicking a link
   }
 
   // Define services with themed CTAs
@@ -144,10 +146,57 @@ export default function Home() {
           >
             Work With Us
           </Button>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <ChevronDown className="h-5 w-5" />
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${mobileMenuOpen ? 'rotate-180' : ''}`} />
           </Button>
         </div>
+        
+        {/* Mobile Menu */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${mobileMenuOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="py-3 px-4 flex flex-col space-y-4 bg-white">
+            <a 
+              href="#why-us"
+              className="text-sm font-medium text-black hover:text-nativeCyan py-1"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </a>
+            <a 
+              href="#services"
+              className="text-sm font-medium text-black hover:text-nativeCyan py-1"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Services
+            </a>
+            <a 
+              href="#journey"
+              className="text-sm font-medium text-black hover:text-nativeCyan py-1"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Journey
+            </a>
+            <Button 
+              size="sm" 
+              className="w-full justify-center mt-2"
+              onClick={() => {
+                // @ts-ignore
+                window.Calendly?.initPopupWidget({
+                  url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+                });
+                setMobileMenuOpen(false);
+                return false;
+              }}
+            >
+              Work With Us
+            </Button>
+          </div>
+        </div>
+        
         <div className="h-[1px] bg-black"></div>
       </header>
 
