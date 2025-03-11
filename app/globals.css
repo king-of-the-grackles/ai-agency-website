@@ -302,16 +302,28 @@
   }
 
   /* Calendly widget styling fixes */
-  .calendly-popup {
+  /* Target main popup container and inner elements */
+  .calendly-overlay,
+  .calendly-popup,
+  .calendly-popup-content {
     background-color: transparent !important;
   }
 
+  /* Specifically target the widget iframe's wrapper to remove white background */
   .calendly-popup .calendly-popup-content {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
-    border-radius: 8px !important;
+    box-shadow: none !important;
+    background: transparent !important;
   }
 
-  .calendly-popup .calendly-popup-overlay {
+  /* Style the actual calendar iframe container */
+  .calendly-popup iframe {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    background-color: white !important;
+  }
+
+  /* Set a semi-transparent dark overlay */
+  .calendly-overlay {
     background-color: rgba(0, 0, 0, 0.4) !important;
   }
 
