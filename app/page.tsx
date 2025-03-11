@@ -38,8 +38,22 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   function handleScroll(id: string) {
-    // Simple direct anchor navigation
-    window.location.href = `#${id}`;
+    // Get the element by ID
+    const element = document.getElementById(id);
+    if (element) {
+      // Smooth scroll with proper offset
+      const yOffset = window.innerWidth < 768 ? -70 : -80; // Mobile vs desktop offset
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+    } else {
+      // Fallback to simple anchor navigation
+      window.location.href = `#${id}`;
+    }
+    
     setMobileMenuOpen(false); // Close menu after clicking a link
   }
 
@@ -117,18 +131,30 @@ export default function Home() {
             <a 
               href="#why-us"
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll("why-us");
+              }}
             >
               About
             </a>
             <a 
               href="#services"
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll("services");
+              }}
             >
               Services
             </a>
             <a 
               href="#journey"
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll("journey");
+              }}
             >
               Journey
             </a>
@@ -162,21 +188,30 @@ export default function Home() {
             <a 
               href="#why-us"
               className="text-sm font-medium text-black hover:text-nativeCyan py-1"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll("why-us");
+              }}
             >
               About
             </a>
             <a 
               href="#services"
               className="text-sm font-medium text-black hover:text-nativeCyan py-1"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll("services");
+              }}
             >
               Services
             </a>
             <a 
               href="#journey"
               className="text-sm font-medium text-black hover:text-nativeCyan py-1"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll("journey");
+              }}
             >
               Journey
             </a>
@@ -495,17 +530,38 @@ export default function Home() {
               <h3 className="font-bold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#why-us" className="text-sm text-nativeCyan hover:text-nativeCyan/80">
+                  <a 
+                    href="#why-us" 
+                    className="text-sm text-nativeCyan hover:text-nativeCyan/80"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScroll("why-us");
+                    }}
+                  >
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#services" className="text-sm text-nativeCyan hover:text-nativeCyan/80">
+                  <a 
+                    href="#services" 
+                    className="text-sm text-nativeCyan hover:text-nativeCyan/80"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScroll("services");
+                    }}
+                  >
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href="#journey" className="text-sm text-nativeCyan hover:text-nativeCyan/80">
+                  <a 
+                    href="#journey" 
+                    className="text-sm text-nativeCyan hover:text-nativeCyan/80"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleScroll("journey");
+                    }}
+                  >
                     Journey
                   </a>
                 </li>

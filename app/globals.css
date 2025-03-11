@@ -67,6 +67,17 @@
   a {
     @apply text-primary hover:text-primary/80;
   }
+  
+  /* Scroll margin for section anchors to account for fixed header */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+  
+  @media (max-width: 767px) {
+    section[id] {
+      scroll-margin-top: 4.5rem;
+    }
+  }
 }
 
 /* Section visual distinction patterns */
