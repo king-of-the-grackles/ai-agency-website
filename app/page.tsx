@@ -113,7 +113,7 @@ export default function Home() {
           </div>
           <nav className="hidden md:flex space-x-6">
             <a 
-              href="#about"
+              href="#why-us"
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
             >
               About
@@ -129,12 +129,6 @@ export default function Home() {
               className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
             >
               Journey
-            </a>
-            <a 
-              href="#footer"
-              className="text-sm font-medium text-black hover:text-nativeCyan bg-transparent border-none cursor-pointer"
-            >
-              Contact
             </a>
           </nav>
           <Button 
@@ -204,7 +198,7 @@ export default function Home() {
         <div className="section-divider"></div>
 
         {/* Why Choose Us Section */}
-        <section className="py-20 relative section-why-us">
+        <section id="why-us" className="py-20 relative section-why-us">
           <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -452,7 +446,7 @@ export default function Home() {
               <h3 className="font-bold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#about" className="text-sm text-nativeCyan hover:text-nativeCyan/80">
+                  <a href="#why-us" className="text-sm text-nativeCyan hover:text-nativeCyan/80">
                     About
                   </a>
                 </li>
