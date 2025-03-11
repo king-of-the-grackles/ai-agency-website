@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import {
@@ -286,44 +285,44 @@ export default function Home() {
           <div className="absolute inset-0 bg-pattern-dots opacity-15"></div>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-black section-title mb-6">
+              <h2 className="text-3xl font-bold text-black section-title mb-6" style={{ userSelect: 'auto !important', pointerEvents: 'auto' }}>
               Solve the AI Product Puzzle
               </h2>
-              <p className="mt-4 text-lg text-black/80 max-w-2xl mx-auto">
+              <p className="mt-4 text-lg text-black/80 max-w-2xl mx-auto" style={{ userSelect: 'auto !important', pointerEvents: 'auto' }}>
               We address the fundamental challenges that derail most AI initiatives: validating real market needs, reducing time-to-launch, and navigating complex technology decisions.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8 max-w-screen-xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-screen-xl mx-auto" style={{ userSelect: 'auto !important', pointerEvents: 'auto' }}>
               {/* Card 1 */}
-              <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream" style={{ userSelect: 'auto !important' }}>
                 <div className="h-12 w-12 bg-white rounded-lg flex items-center justify-center mb-4 mx-auto border-2 border-black">
                   <Telescope className="h-6 w-6 text-black" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-black text-center">Turn Vision Into Traction</h3>
-                <p className="text-black/80 text-center">
+                <h3 className="text-xl font-bold mb-3 text-black text-center" style={{ userSelect: 'auto !important' }}>Turn Vision Into Traction</h3>
+                <p className="text-black/80 text-center" style={{ userSelect: 'auto !important' }}>
                 Transform your concept into a product users love. We validate core assumptions through targeted discovery, focus development on high-impact features, and build solutions that drive early adoption.
                 </p>
               </div>
               
               {/* Card 2 */}
-              <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream" style={{ userSelect: 'auto !important' }}>
                 <div className="h-12 w-12 bg-white rounded-lg flex items-center justify-center mb-4 mx-auto border-2 border-black">
                   <Rocket className="h-6 w-6 text-black" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-black text-center">Launch in 30 Days, Not Months</h3>
-                <p className="text-black/80 text-center">
+                <h3 className="text-xl font-bold mb-3 text-black text-center" style={{ userSelect: 'auto !important' }}>Launch in 30 Days, Not Months</h3>
+                <p className="text-black/80 text-center" style={{ userSelect: 'auto !important' }}>
                 Get a functional prototype into users' hands in just 30 days. Our AI-augmented development approach compresses the build cycle, delivering real feedback faster and preserving runway for critical iterations while competitors are still building.
                 </p>
               </div>
               
               {/* Card 3 */}
-              <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-nativeCream" style={{ userSelect: 'auto !important' }}>
                 <div className="h-12 w-12 bg-white rounded-lg flex items-center justify-center mb-4 mx-auto border-2 border-black">
                   <Compass className="h-6 w-6 text-black" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-black text-center">Demystifying Your AI Tech Stack</h3>
-                <p className="text-black/80 text-center">
+                <h3 className="text-xl font-bold mb-3 text-black text-center" style={{ userSelect: 'auto !important' }}>Demystifying Your AI Tech Stack</h3>
+                <p className="text-black/80 text-center" style={{ userSelect: 'auto !important' }}>
                 Navigate the complex landscape of AI tools with confidence. We cut through the noise of emerging frameworks to design and implement a tailored tech stack that aligns with your product vision, user needs, and scalability requirements.
                 </p>
               </div>

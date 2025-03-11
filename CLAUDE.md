@@ -3,9 +3,9 @@
 ## Build/Development Commands
 - `npm run dev` - Start development server
 - `npm run build` - Build production application
-- `npm run start` - Start production server
+- `npm run start` - Start production server (after building)
 - `npm run lint` - Run ESLint for code linting
-- Note: Test setup not yet implemented in package.json
+- For testing: Consider adding Jest or Vitest with `npm test` and `npm test -- -t 'test name'` for single tests
 
 ## Code Style Guidelines
 - **TypeScript**: Strict typing with interfaces/types for props; paths alias `@/*`
@@ -16,6 +16,7 @@
 - **CSS**: Tailwind utility classes; use `cn()` from lib/utils.ts for conditionals
 - **Components**: Shadcn UI with Radix primitives; prioritize accessibility
 - **Forms**: react-hook-form with zod validation schemas
+- **Error Handling**: Try/catch with user-friendly messages; use sonner toast notifications
 
 ## Project Structure
 - `/app`: Next.js app router pages and routing structure
@@ -26,8 +27,10 @@
 - `/v0`: Previous version of the site (cursorrule: "This is a next.js web app")
 
 ## Development Practices
-- Test responsive designs with Tailwind breakpoints (sm, md, lg, xl)
+- Test responsive designs with Tailwind breakpoints (sm, md, lg, xl, 2xl)
 - Optimize images with Next.js Image component
 - Use destructuring for props; React.forwardRef when needed
-- Segment client components with "use client" directive
-- Implement proper error handling with user feedback
+- Add "use client" directive for client-side components
+- Use Next.js server actions for form submissions when appropriate
+- Implement proper error boundaries and fallback UIs
+- Follow accessibility best practices with Radix UI primitives

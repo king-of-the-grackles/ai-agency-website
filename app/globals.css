@@ -58,7 +58,7 @@
 @layer base {
   * {
     @apply border-border;
-    user-select: text;
+    user-select: auto !important;
   }
   body {
     @apply bg-background text-foreground;
@@ -119,7 +119,7 @@
     -webkit-background-clip: text;
     color: transparent;
     background-image: linear-gradient(to right, hsl(var(--nativeCyan)), hsl(var(--nativeOrange)));
-    user-select: text;
+    user-select: auto !important;
   }
 
   .fade-bottom {

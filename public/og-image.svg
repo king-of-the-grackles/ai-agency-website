@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="white"/>
+  
+  <!-- Green accent rectangle -->
+  <rect x="0" y="0" width="1200" height="20" fill="#4CAF50"/>
+  
+  <!-- Logo element -->
+  <rect x="100" y="100" width="80" height="80" rx="12" fill="#F5F5DC"/>
+  <text x="140" y="155" font-family="Arial, sans-serif" font-size="40" text-anchor="middle">🌱</text>
+  
+  <!-- Company name -->
+  <text x="200" y="145" font-family="Arial, sans-serif" font-weight="bold" font-size="48">Native AI</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="300" font-family="Arial, sans-serif" font-weight="bold" font-size="60" text-anchor="middle">Become an AI-First Company</text>
+  
+  <!-- Sub-tagline -->
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#555">Launch AI-native apps and human-centered</text>
+  <text x="600" y="430" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#555">conversational experiences</text>
+  
+  <!-- URL -->
+  <text x="600" y="550" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="#777">www.buildnative.ai</text>
+</svg>

@@ -7,9 +7,60 @@ import Script from "next/script"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Native AI - AI-Native Apps & Conversational Solutions",
-  description: "Transforming businesses through Custom AI, Voice Agents, Chatbots, Consulting, and Team Trainings.",
-  generator: 'v0.dev'
+  title: {
+    default: "Native AI | Become an AI-First Company",
+    template: "%s | Native AI",
+  },
+  description: "Launch AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works.",
+  generator: 'v0.dev',
+  keywords: "AI-first company, AI product development, AI prototypes, AI strategy, conversational AI, AI solutions, product operations, AI consulting",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  authors: [{ name: "Native AI" }],
+  category: "AI Solutions",
+  alternates: {
+    canonical: "https://www.buildnative.ai",
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.buildnative.ai',
+    siteName: 'Native AI',
+    title: 'Native AI | Become an AI-First Company',
+    description: 'Launch AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works.',
+    images: [
+      {
+        url: 'https://www.buildnative.ai/api/og-image',
+        width: 1200,
+        height: 630,
+        alt: 'Native AI - Become an AI-First Company',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Native AI | Become an AI-First Company',
+    description: 'Launch AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works.',
+    images: ['https://www.buildnative.ai/api/og-image'],
+    creator: '@NativeAI',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  }
 }
 
 export default function RootLayout({
@@ -20,7 +71,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+        <meta name="theme-color" content="#4CAF50" />
+        <meta name="color-scheme" content="light dark" />
+        <meta name="rating" content="General" />
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
         {children}

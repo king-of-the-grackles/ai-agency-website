@@ -2,6 +2,32 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Home } from 'lucide-react'
 
+export const metadata = {
+  title: "Page Not Found | Native AI",
+  description: "We couldn't find the page you're looking for. Navigate back to continue your AI journey with Native AI.",
+  robots: {
+    index: false,
+    follow: false
+  },
+  openGraph: {
+    title: "Page Not Found | Native AI",
+    description: "We couldn't find the page you're looking for. Navigate back to continue your AI journey with Native AI.",
+    url: "https://www.buildnative.ai/404",
+    images: [{
+      url: "https://www.buildnative.ai/api/og-image",
+      width: 1200,
+      height: 630,
+      alt: "Native AI - Page Not Found"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Page Not Found | Native AI",
+    description: "We couldn't find the page you're looking for. Navigate back to continue your AI journey with Native AI.",
+    images: ["https://www.buildnative.ai/api/og-image"]
+  }
+}
+
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] p-4">
