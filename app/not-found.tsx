@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Home } from 'lucide-react'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Page Not Found | Native AI",
   description: "We couldn't find the page you're looking for. Navigate back to continue your AI journey with Native AI.",
   robots: {

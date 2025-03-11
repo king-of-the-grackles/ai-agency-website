@@ -1,10 +1,17 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#4CAF50"
+}
 
 export const metadata: Metadata = {
   title: {
@@ -14,7 +21,6 @@ export const metadata: Metadata = {
   description: "Launch AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works.",
   generator: 'v0.dev',
   keywords: "AI-first company, AI product development, AI prototypes, AI strategy, conversational AI, AI solutions, product operations, AI consulting",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   robots: {
     index: true,
     follow: true,
@@ -72,7 +78,6 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
-        <meta name="theme-color" content="#4CAF50" />
         <meta name="color-scheme" content="light dark" />
         <meta name="rating" content="General" />
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
