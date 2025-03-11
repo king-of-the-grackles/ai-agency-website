@@ -115,7 +115,7 @@ export default function Home() {
     });
     // @ts-ignore
     window.Calendly?.initPopupWidget({
-      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=transparent&text_color=333333&primary_color=27AE60'
     });
     return false;
   }
@@ -169,7 +169,7 @@ export default function Home() {
             onClick={() => {
               // @ts-ignore
               window.Calendly?.initPopupWidget({
-                url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+                url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=transparent&text_color=333333&primary_color=27AE60'
               });
               return false;
             }}
@@ -225,7 +225,7 @@ export default function Home() {
               onClick={() => {
                 // @ts-ignore
                 window.Calendly?.initPopupWidget({
-                  url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+                  url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=transparent&text_color=333333&primary_color=27AE60'
                 });
                 setMobileMenuOpen(false);
                 return false;
@@ -431,7 +431,7 @@ export default function Home() {
                   onClick={() => {
                     // @ts-ignore
                     window.Calendly?.initPopupWidget({
-                      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+                      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=transparent&text_color=333333&primary_color=27AE60'
                     });
                     return false;
                   }}
@@ -484,7 +484,7 @@ export default function Home() {
                   onClick={() => {
                     // @ts-ignore
                     window.Calendly?.initPopupWidget({
-                      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1'
+                      url: 'https://calendly.com/chris_ivester/discovery_call?hide_event_type_details=1&hide_gdpr_banner=1&background_color=transparent&text_color=333333&primary_color=27AE60'
                     });
                     return false;
                   }}

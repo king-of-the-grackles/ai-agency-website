@@ -301,30 +301,37 @@
     }
   }
 
-  /* Calendly widget styling fixes */
-  /* Target main popup container and inner elements */
-  .calendly-overlay,
-  .calendly-popup,
+  /* Calendly widget styling fixes - new approach */
+  /* Remove white background from outer elements */
   .calendly-popup-content {
-    background-color: transparent !important;
-  }
-
-  /* Specifically target the widget iframe's wrapper to remove white background */
-  .calendly-popup .calendly-popup-content {
     box-shadow: none !important;
     background: transparent !important;
+    max-width: 800px !important;
+    margin: auto !important;
+    height: auto !important;
   }
 
-  /* Style the actual calendar iframe container */
-  .calendly-popup iframe {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
-    border-radius: 8px !important;
-    background-color: white !important;
+  /* Target the wrapper div surrounding the iframe */
+  .calendly-popup .calendly-popup-content > div {
+    background-color: transparent !important;
+    box-shadow: none !important;
   }
-
-  /* Set a semi-transparent dark overlay */
+  
+  /* Remove any inline background styles */
+  [style*="background"] {
+    background-color: transparent !important;
+  }
+  
+  /* Style the overlay */
   .calendly-overlay {
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  /* Ensure the calendar iframe has proper styling */
+  .calendly-popup-content iframe {
+    border-radius: 8px !important;
+    max-height: 90vh !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
   }
 
   .section-why-us {
