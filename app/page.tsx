@@ -159,26 +159,21 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-10 md:py-16 relative overflow-visible section-hero" style={{ userSelect: 'text' }}>
-          <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
-          <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative">
-            <div className="space-y-6 relative z-10" style={{ userSelect: 'text' }}>
-              <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden mb-6 md:hidden shadow-xl">
-                <Image
-                  src="/placeholder.svg?height=800&width=800"
-                  alt="AI Innovation"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black text-center md:text-left" style={{ userSelect: 'text' }}>
+        <section className="py-24 md:py-36 relative overflow-visible section-hero" style={{ userSelect: 'text' }}>
+          <div className="wave-container pointer-events-none">
+            <div className="wave"></div>
+            <div className="wave"></div>
+            <div className="wave"></div>
+          </div>
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-4xl mx-auto space-y-12 relative z-10 text-center pt-8 pb-12" style={{ userSelect: 'text' }}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black" style={{ userSelect: 'text' }}>
                 Become an <span className="text-gradient" style={{ userSelect: 'text' }}>AI-First</span> Company
               </h1>
-              <p className="text-lg md:text-xl text-black/80 text-center md:text-left" style={{ userSelect: 'text' }}>
-              Launch AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works.
+              <p className="text-lg md:text-xl text-black/80 max-w-3xl mx-auto" style={{ userSelect: 'text' }}>
+                Launch AI-native apps and human-centered conversational experiences that solve meaningful customer problems and transform how your team works.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start" style={{ userSelect: 'none' }}>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center" style={{ userSelect: 'none' }}>
                 <Button 
                   size="lg" 
                   className="shadow-lg cursor-pointer"
@@ -202,23 +197,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden hidden md:block shadow-xl">
-              <Image
-                src="/placeholder.svg?height=800&width=800"
-                alt="AI Innovation"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
           </div>
-          {/* Down arrow removed temporarily
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-10">
-            <a href="#services" className="flex items-center justify-center h-10 w-10 rounded-full bg-white shadow-md">
-              <ChevronDown className="h-5 w-5 text-black" />
-            </a>
-          </div>
-          */}
         </section>
 
         {/* Section Divider */}
