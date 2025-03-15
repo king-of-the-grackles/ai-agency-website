@@ -18,14 +18,14 @@
 - **CTA**: Discover Our Approach
 
 ### Value Propositions
-1. **Expertise**
-   - Deep technical knowledge and industry experience to deliver results that transform your business.
+1. **Leading Edge AI Expertise**
+   - Break boundaries with our team of fearless AI innovators, delivering tomorrow’s technology today. From pioneering solutions to bespoke strategies, we propel your brand to the forefront of the AI revolution.
 
-2. **Innovation**
-   - Cutting-edge solutions that keep you ahead of the competition in the rapidly evolving AI landscape.
+2. **Launch Your Idea Fast**
+   - Accelerate from concept to reality with lightning-fast development and an agile mindset. Our streamlined processes and bold problem-solving slash time-to-market—helping you seize opportunities before they’re gone.
 
-3. **Partnership**
-   - We work alongside you to ensure long-term success and growth with sustainable AI solutions.
+3. **Optimized for Start-Ups**
+   - Power your growth with lean, scalable AI solutions designed for the hustle of early-stage ventures. Our supportive approach, hands-on training, and savvy strategies ensure you thrive in a fast-paced digital landscape.
 
 ## Services
 - **Section Title**: Our Services
